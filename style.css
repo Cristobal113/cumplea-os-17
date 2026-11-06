@@ -1,0 +1,322 @@
+/* ==========================================
+   ESTILOS GENERALES Y PALETA DE COLORES
+   Rojo Vino (#4A0E17), Negro (#0A0A0C), Dorado MATE (#D4AF37 / #C5A059)
+   ========================================== */
+
+:root {
+    --bg-dark: #0a0a0c;
+    --bg-card: #160b11;
+    --wine-main: #58111a;
+    --wine-light: #801b2a;
+    --gold-bright: #f3e5ab;
+    --gold-mate: #c5a059;
+    --gold-glow: #e6c675;
+    --text-light: #ececec;
+    --text-muted: #b3a0a6;
+    --skz-stay-red: #d90429;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+/* Efectos Glow de Fondo Elegantes */
+.bg-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.35;
+}
+.glow-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--wine-light);
+    top: -50px;
+    left: -50px;
+}
+.glow-2 {
+    width: 500px;
+    height: 500px;
+    background: #3b060d;
+    bottom: -100px;
+    right: -50px;
+}
+
+/* Skzoos Flotantes de fondo */
+.floating-skzoo {
+    position: fixed;
+    font-size: 2.2rem;
+    opacity: 0.25;
+    user-select: none;
+    animation: float 6s ease-in-out infinite;
+    z-index: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.floating-skzoo:hover {
+    opacity: 0.9;
+    transform: scale(1.3) rotate(10deg);
+    cursor: pointer;
+}
+.skzoo-1 { top: 15%; left: 8%; animation-delay: 0s; }
+.skzoo-2 { top: 45%; right: 7%; animation-delay: 1.5s; }
+.skzoo-3 { bottom: 20%; left: 6%; animation-delay: 3s; }
+.skzoo-4 { top: 75%; right: 10%; animation-delay: 4.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+/* HEADER & TITULO */
+.hero {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.skz-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--gold-mate);
+    border: 1px solid var(--gold-mate);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    background: rgba(197, 160, 89, 0.05);
+}
+
+.main-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    color: var(--gold-mate);
+    text-shadow: 0 0 15px rgba(197, 160, 89, 0.3), 2px 2px 4px #000;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* HÉROE LEEBIT (Lee Know Skzoo con Corazón) */
+.leebit-hero-container {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.leebit-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(88, 17, 26, 0.6), rgba(15, 10, 12, 0.9));
+    border: 2px solid var(--gold-mate);
+    border-radius: 20px;
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(88, 17, 26, 0.4);
+}
+
+.heart-pulse {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 2rem;
+    animation: heartBeat 1.3s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.leebit-avatar img {
+    width: 85px;
+    height: 85px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid var(--gold-mate);
+    box-shadow: 0 0 15px rgba(243, 229, 171, 0.2);
+}
+
+.leebit-tag span {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-bright);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.leebit-tag p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+/* NAVEGACIÓN DE BOTONES CARTA I, II, III, IV */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cards-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.nav-btn {
+    background: rgba(20, 10, 15, 0.8);
+    border: 1px solid var(--gold-mate);
+    color: var(--gold-mate);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav-btn:hover {
+    background: var(--wine-light);
+    color: #fff;
+    border-color: var(--gold-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, var(--wine-main), var(--wine-light));
+    color: var(--gold-bright);
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 18px rgba(197, 160, 89, 0.5);
+}
+
+/* SECCIÓN DE CARTAS (INTERACTIVAS) */
+.letter-card {
+    display: none;
+    background: rgba(18, 10, 14, 0.92);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-left: 4px solid var(--gold-mate);
+    border-radius: 15px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.letter-card.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-mate);
+    font-size: 1.6rem;
+}
+
+.member-badge {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+.bangchan-style { background: #2b1d28; color: #e2b6cf; border: 1px solid #e2b6cf; }
+.changbin-style { background: #331518; color: #ff8fa3; border: 1px solid #ff8fa3; }
+.hyunjin-style  { background: #2a1a08; color: #ffb703; border: 1px solid #ffb703; }
+.felix-style    { background: #1a261a; color: #90be6d; border: 1px solid #90be6d; }
+
+.card-body p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 1.02rem;
+    color: #dfdfdf;
+    text-align: justify;
+}
+
+.final-wish {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem !important;
+    color: var(--gold-bright) !important;
+    text-align: right !important;
+    margin-top: 25px;
+}
+
+/* SKZ FACTS ESTILIZADOS */
+.skz-fact {
+    margin-top: 25px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.5);
+    border-left: 3px solid var(--gold-mate);
+}
+.skz-fact strong {
+    color: var(--gold-bright);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}/* Ajuste para el contenedor del Avatar de Leebit */
+.leebit-avatar {
+    width: 85px;
+    height: 85px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold-mate);
+    box-shadow: 0 0 15px rgba(243, 229, 171, 0.2);
+    overflow: hidden;
+}
+
+.leebit-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skzoo-emoji-fallback {
+    font-size: 2.5rem;
+}
